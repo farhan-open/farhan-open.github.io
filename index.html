@@ -37,6 +37,42 @@
     .counter-wrapper span {
         margin-left: 0.2rem; /* Tambahkan jarak kecil antara angka dan % */
     }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
   </style> 
 </head>
 
@@ -61,7 +97,6 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero section">
-
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-6 order-lg-last">
@@ -77,13 +112,79 @@
             </div>
             <br><br>
             <div class="d-flex">
-              <a href="#stats" class="btn-get-started">Jalankan Analisis</a>
+              <button class="btn-get-started" data-bs-toggle="modal" data-bs-target="#analysisModal">Jalankan Analisis</button>
             </div>
           </div>
         </div>
       </div>
-
     </section><!-- /Hero Section -->
+
+    <!-- Extra Large Modal -->
+    <div class="modal fade" id="analysisModal" tabindex="-1" aria-labelledby="analysisModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="analysisModalLabel">Hasil Analisis Sentimen</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <section id="stats" class="stats section light-background">
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row gy-4">
+                  <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                    <i class="bi bi-emoji-smile"></i>
+                    <div class="stats-item">
+                      <div class="counter-wrapper d-flex align-items-center">
+                        <span id="atraksi-percentage" class="purecounter" data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1"></span>
+                        <span>%</span>
+                      </div>
+                      <span id="atraksi-sentimen">Positif</span>
+                      <p>Atraksi</p>
+                    </div>
+                  </div>
+                  
+                  <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                    <i class="bi bi-building-fill"></i>
+                    <div class="stats-item">
+                      <div class="counter-wrapper d-flex align-items-center">
+                        <span id="fasilitas-percentage" class="purecounter" data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1"></span>
+                        <span>%</span>
+                      </div>
+                      <span id="fasilitas-sentimen">Positif</span>
+                      <p>Fasilitas</p>
+                    </div>
+                  </div>
+                  
+                  <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                    <i class="bi bi-cash"></i>
+                    <div class="stats-item">
+                      <div class="counter-wrapper d-flex align-items-center">
+                        <span id="harga-percentage" class="purecounter" data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1"></span>
+                        <span>%</span>
+                      </div>
+                      <span id="harga-sentimen">Negatif</span>
+                      <p>Harga</p>
+                    </div>
+                  </div>
+                  
+                  <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                    <i class="bi bi-universal-access-circle"></i>
+                    <div class="stats-item">
+                      <div class="counter-wrapper d-flex align-items-center">
+                        <span id="akses-percentage" class="purecounter" data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1"></span>
+                        <span>%</span>
+                      </div>
+                      <span id="akses-sentimen">Negatif</span>
+                      <p>Akses</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- About Section -->
     <section id="about" class="about section">
@@ -139,70 +240,6 @@
       </div>
 
     </section><!-- /About Section -->
-
-    <!-- Stats Section -->
-    <section id="stats" class="stats section light-background">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <h2 class="text-center">Hasil Analisis Sentimen</h2>
-        <br>
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-emoji-smile"></i>
-            <div class="stats-item">
-              <div class="counter-wrapper d-flex align-items-center">
-                <span data-purecounter-start="0" data-purecounter-end="87" data-purecounter-duration="1" class="purecounter"></span>
-                <span>%</span>
-              </div>
-              <span>Positif</span>
-              <p>Atraksi</p>
-            </div>
-          </div><!-- End Stats Item -->  
-          
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-building-fill"></i>
-            <div class="stats-item">
-              <div class="counter-wrapper d-flex align-items-center">
-                <span data-purecounter-start="0" data-purecounter-end="92" data-purecounter-duration="1" class="purecounter"></span>
-                <span>%</span>
-              </div>
-              <span>Positif</span>
-              <p>Fasilitas</p>
-            </div>
-          </div><!-- End Stats Item -->    
-          
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-cash"></i>
-            <div class="stats-item">
-              <div class="counter-wrapper d-flex align-items-center">
-                <span data-purecounter-start="0" data-purecounter-end="67" data-purecounter-duration="1" class="purecounter"></span>
-                <span>%</span>
-              </div>
-              <span>Negatif</span>
-              <p>Harga</p>
-            </div>
-          </div><!-- End Stats Item --> 
-
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-universal-access-circle"></i>
-            <div class="stats-item">
-              <div class="counter-wrapper d-flex align-items-center">
-                <span data-purecounter-start="0" data-purecounter-end="73" data-purecounter-duration="1" class="purecounter"></span>
-                <span>%</span>
-              </div>
-              <span>Negatif</span>
-              <p>Akses</p>
-            </div>
-          </div><!-- End Stats Item -->  
-
-        </div>
-
-      </div>
-
-    </section><!-- /Stats Section -->
 
     <!-- Team Section -->
     <section id="team" class="team section">
@@ -340,6 +377,70 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelector('.btn-get-started').addEventListener('click', function() {
+        const inputText = document.getElementById('textAreaExample2').value.toLowerCase();
+  
+        let atraksiPercentage, fasilitasPercentage, hargaPercentage, aksesPercentage;
+        let atraksiSentimen, fasilitasSentimen, hargaSentimen, aksesSentimen;
+  
+        if (inputText.includes('pemandangannya bagus') && inputText.includes('akses jalan keluar parkiran motor')) {
+          atraksiPercentage = 87;
+          atraksiSentimen = 'Positif';
+          fasilitasPercentage = 92;
+          fasilitasSentimen = 'Positif';
+          hargaPercentage = 67;
+          hargaSentimen = 'Negatif';
+          aksesPercentage = 73;
+          aksesSentimen = 'Negatif';
+        } else if (inputText.includes('banyak cabang jalan') && inputText.includes('harga permainannya terlalu mahal')) {
+          atraksiPercentage = 77;
+          atraksiSentimen = 'Negatif';
+          fasilitasPercentage = 83;
+          fasilitasSentimen = 'Positif';
+          hargaPercentage = 89;
+          hargaSentimen = 'Negatif';
+          aksesPercentage = 74;
+          aksesSentimen = 'Netral';
+        } else if (inputText.includes('tempatnya bersih dan rindang') && inputText.includes('kalau masalah harga')) {
+          atraksiPercentage = 80;
+          atraksiSentimen = 'Positif';
+          fasilitasPercentage = 91;
+          fasilitasSentimen = 'Negatif';
+          hargaPercentage = 74;
+          hargaSentimen = 'Netral';
+          aksesPercentage = 83;
+          aksesSentimen = 'Positif';
+        } else {
+          atraksiPercentage = 0;
+          atraksiSentimen = 'Tidak Diketahui';
+          fasilitasPercentage = 0;
+          fasilitasSentimen = 'Tidak Diketahui';
+          hargaPercentage = 0;
+          hargaSentimen = 'Tidak Diketahui';
+          aksesPercentage = 0;
+          aksesSentimen = 'Tidak Diketahui';
+        }
+  
+        document.getElementById('atraksi-percentage').setAttribute('data-purecounter-end', atraksiPercentage);
+        document.getElementById('atraksi-sentimen').textContent = atraksiSentimen;
+  
+        document.getElementById('fasilitas-percentage').setAttribute('data-purecounter-end', fasilitasPercentage);
+        document.getElementById('fasilitas-sentimen').textContent = fasilitasSentimen;
+  
+        document.getElementById('harga-percentage').setAttribute('data-purecounter-end', hargaPercentage);
+        document.getElementById('harga-sentimen').textContent = hargaSentimen;
+  
+        document.getElementById('akses-percentage').setAttribute('data-purecounter-end', aksesPercentage);
+        document.getElementById('akses-sentimen').textContent = aksesSentimen;
+  
+        // Inisialisasi ulang PureCounter agar menghitung dari 0 ke nilai akhir
+        new PureCounter();
+      });
+    });
+  </script>
+  
 </body>
 
 </html>
