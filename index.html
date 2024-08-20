@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Analisis Sentimen</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/menu.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .counter-wrapper {
+        display: flex;
+        align-items: center; /* Menyelaraskan secara vertikal */
+        justify-content: center; /* Menyelaraskan secara horizontal */
+    }
+
+    .counter-wrapper span {
+        margin-left: 0.2rem; /* Tambahkan jarak kecil antara angka dan % */
+    }
+  </style> 
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Analisis Sentimen</h1>
+      </a>
+
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      <a class="btn-getstarted" href="index.html#about">Upload CSV</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 order-lg-last">
+            <img src="assets/img/hero-img.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6  d-flex flex-column justify-content-center">
+            <h1>Analisis Sentimen Berbasis Aspek</h1>
+            <p>Masukkan teks Anda di bawah ini untuk dianalisis</p>
+            <p></p>
+
+            <div data-mdb-input-init class="form-outline">
+              <textarea class="form-control" id="textAreaExample2" rows="8"></textarea>
+            </div>
+            <br><br>
+            <div class="d-flex">
+              <a href="#stats" class="btn-get-started">Jalankan Analisis</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row align-items-xl-center gy-5">
+
+          <div class="col-xl-5 content">
+            <h3>Tentang</h3>
+            <h2>Analisis Sentimen Berbasis Aspek</h2>
+            <p>Analisis sentimen berbasis aspek merupakan proses mengidentifikasi aspek sentimen dalam sebuah teks dengan berfokus pada aspek tertentu. Dalam hal ini aspek yang digunakan adalah atraksi, fasilitas, harga, dan akses.</p>
+          </div>
+
+          <div class="col-xl-7">
+            <div class="row gy-4 icon-boxes">
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box">
+                  <i class="bi bi-emoji-smile"></i>
+                  <h3>Atraksi</h3>
+                  <p>Atraksi atau daya tarik wisata berkaitan dengan apa yang bisa dilihat (what to see) dan dilakukan (what to do) oleh wisatawan di sebuah destinasi wisata</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon-box">
+                  <i class="bi bi-cash"></i>
+                  <h3>Harga</h3>
+                  <p>Nilai barang yang ditentukan atau dirupakan dengan uang</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon-box">
+                  <i class="bi bi-building-fill"></i>
+                  <h3>Fasilitas</h3>
+                  <p>Fasilitas merupakan segala macam prasarana dan sarana yang diperlukan oleh wisatawan selama berada di daerah tujuan wisata, meliputi kebutuhan akomodasi, penyediaan makanan dan minuman, gedung pertunjukan, tempat hiburan (entertainment), dan tempat perbelanjaan</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon-box">
+                  <i class="bi bi-universal-access-circle"></i>
+                  <h3>Akses</h3>
+                  <p>Akses merupakan sarana dan infrastruktur yang memberikan kemudahan kepada wisatawan untuk bergerak dari satu daerah ke daerah lain. Faktor-faktor yang penting terkait dengan aspek aksesibilitas wisata meliputi petunjuk arah, bandara, terminal, waktu yang dibutuhkan, biaya perjalanan, dan frekuensi transportasi menuju lokasi wisata</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section light-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <h2 class="text-center">Hasil Analisis Sentimen</h2>
+        <br>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-emoji-smile"></i>
+            <div class="stats-item">
+              <div class="counter-wrapper d-flex align-items-center">
+                <span data-purecounter-start="0" data-purecounter-end="87" data-purecounter-duration="1" class="purecounter"></span>
+                <span>%</span>
+              </div>
+              <span>Positif</span>
+              <p>Atraksi</p>
+            </div>
+          </div><!-- End Stats Item -->  
+          
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-building-fill"></i>
+            <div class="stats-item">
+              <div class="counter-wrapper d-flex align-items-center">
+                <span data-purecounter-start="0" data-purecounter-end="92" data-purecounter-duration="1" class="purecounter"></span>
+                <span>%</span>
+              </div>
+              <span>Positif</span>
+              <p>Fasilitas</p>
+            </div>
+          </div><!-- End Stats Item -->    
+          
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-cash"></i>
+            <div class="stats-item">
+              <div class="counter-wrapper d-flex align-items-center">
+                <span data-purecounter-start="0" data-purecounter-end="67" data-purecounter-duration="1" class="purecounter"></span>
+                <span>%</span>
+              </div>
+              <span>Negatif</span>
+              <p>Harga</p>
+            </div>
+          </div><!-- End Stats Item --> 
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-universal-access-circle"></i>
+            <div class="stats-item">
+              <div class="counter-wrapper d-flex align-items-center">
+                <span data-purecounter-start="0" data-purecounter-end="73" data-purecounter-duration="1" class="purecounter"></span>
+                <span>%</span>
+              </div>
+              <span>Negatif</span>
+              <p>Akses</p>
+            </div>
+          </div><!-- End Stats Item -->  
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Team Section -->
+    <section id="team" class="team section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Wordcloud</h2>
+        <p>Visualisasi Wordcloud sentimen positif dan negatif pada masing-masing aspek</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets\img\wordcloud\positif-atraksi.png" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>Sentimen Positif</h4>
+                <span>Aspek Atraksi</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets\img\wordcloud\negatif-atraksi.png" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>Sentimen Negatif</h4>
+                <span>Aspek Atraksi</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets\img\wordcloud\positif-fasilitas.png" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>Sentimen Positif</h4>
+                <span>Aspek Fasilitas</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets\img\wordcloud\negatif-fasilitas.png" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>Sentimen Negatif</h4>
+                <span>Aspek Fasilitas</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets\img\wordcloud\positif-harga.png" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>Sentimen Positif</h4>
+                <span>Aspek Harga</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets\img\wordcloud\negatif-harga.png" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>Sentimen Negatif</h4>
+                <span>Aspek Harga</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets\img\wordcloud\positif-akses.png" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>Sentimen Positif</h4>
+                <span>Aspek Akeses</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets\img\wordcloud\negatif-akses.png" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>Sentimen Negatif</h4>
+                <span>Aspek Akses</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Team Section -->
+
+  </main>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
